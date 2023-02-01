@@ -4,7 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const myPokemonRouter = require('./routes/myPokemon');
+const actionsRouter = require('./routes/actions');
 
 const app = express();
 
@@ -14,6 +14,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/my-pokemon', myPokemonRouter);
+app.use('/actions', actionsRouter);
 
 module.exports = app;
